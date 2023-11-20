@@ -1,0 +1,183 @@
+#easy1
+x=int(input("Enter number1: "))
+y=int(input("Enter number2: "))
+def div(x,y):
+    if x==0 or y==0:
+        a=0
+    else:
+        a=(x/y)-y
+    return a
+
+print(div(x,y))
+
+#easy2
+height=int(input("Enter height: "))
+kg=int(input("Enter weight: "))
+def BMI(height, kg):
+    m = height / 100
+    BMI = kg /(m * m)
+    if BMI < 18.5:
+        print("Your score is",format(BMI,".1f"),end=".")
+        print("You are underweight")
+    elif BMI <= 24.9:
+        print("Your score is",format(BMI,".1f"),end=".")
+        print("You are normal")
+    elif BMI <= 30:
+        print("Your score is",format(BMI,".1f"),end=".")
+        print("You are overweight")
+    elif BMI > 30:
+        print("Your score is",format(BMI,".1f"),end=".")
+        print("You are obese.")
+BMI(height, kg)
+
+#easy3
+x=int(input("Enter x: "))
+y=int(input("Enter y: "))
+z=int(input("Enter z: "))
+def div(x,y,z):
+    sum=x
+    while x<y:
+        sum+=x
+        x+=z
+    print(sum)
+
+div(x,y,z)    
+
+#med1
+burger=input("Enter name: ")
+burger.lower()
+location=input("Enter location: ")
+location.lower()
+def cost(burger,location):
+    if burger=="bbq chicken cheese burger":
+        if location=="mohakhali" or location=="":
+            cost=250+250*8/100+40
+            print(cost)
+        else:
+            cost=250+250*8/100+60
+            print(cost)
+    elif burger=="beef burger":
+        if location=="mohakhali" or location=="":
+            cost=170+170*8/100+40
+            print(cost)
+        else:
+             cost=170+170*8/100+60
+             print(cost)
+    else:
+        if burger=="naga drums":
+            if location=="mohakhali" or location=="":
+                cost=200+200*8/100+40
+                print(cost)
+            else:
+                cost=200+200*8/100+60
+                print(cost)     
+cost(burger,location) 
+
+#med2
+email=input("Enter email: ")
+new_domain=input("Enter new domain: ")
+old_domain=input("Enter old domain: ")
+def replace_domain(email,new_domain,old_domain):
+    if new_domain in email:
+        c=email
+        print("Unchanged: ",c)
+    else:
+        c=""
+        for i in range(0,len(email),1):
+            if email[i]=="@":
+                c+=email[i]
+                break
+            else:
+                c+=email[i]
+        c=c+new_domain
+        print("Changed: ",c)
+replace_domain(email,new_domain,old_domain) 
+
+#med3
+x=input("Enter name: ")
+def vc(x):
+    x=x.lower()
+    list1=["a","e","i","o","u"]
+    c=0
+    list2=[]
+    for i in x:
+        if i in list1:
+            c+=1
+            list2.append(i)
+    if c==0:
+        print("no vowels in the name")
+    else:
+        print("Vowels:",end=" ")
+        print(list2,end=".")
+        print("Total number of vowels",end=" ")
+        print(c,end=".")
+        
+vc(x)        
+
+#med4
+a=input("Enter name: ")
+def x(a):
+    a=a.lower()
+    a=a.replace(" ","")
+    c=""
+    for i in range(len(a)-1,-1,-1):
+        c=c+a[i]
+    if a==c:
+        print("Palindrome")
+    else:
+        print("Not a palindrome")
+x(a)   
+
+#hard1
+cm=int(input("Enter current month: "))
+cd=int(input("Enter current date: "))
+name=input("Enter name: ")
+salary=int(input("Enter salary: "))
+yyyy=int(input("Enter year: "))
+mm=int(input("Enter month: "))
+dd=int(input("Enter day: "))
+if cm>mm or dd<cd:
+    yyyy-=1
+import datetime
+x = (datetime.date(yyyy,mm,dd))
+
+def bonus(*args):
+    if 2020-yyyy<5:
+        p=salary*(10/100)
+        print(name,":",p)
+    elif 2020-yyyy<=10:
+        p=salary*(10/100)+5000
+        print(name,":",p)
+    elif 2020-yyyy>10:
+        p=salary*(15/100)+15000
+        print(name,":",p)
+bonus(name,salary,x) 
+
+#hard2
+n=int(input("Enter year: "))
+def year(n):
+    y=n/365
+    y=int(y)
+    n=n%365
+    m=n//30
+    n=n%30
+    print(y,"years",",",m,"month","and",n,"days")
+year(n)     
+
+#hard3
+s=input("Enter paragraph: ")
+def cap(s):
+    n=list(s)
+    for i in range(0,len(s)):
+        if i==0:
+            n[i]=n[i].upper()
+        if i>=2:
+            if n[i-2]=="." or n[i-2]=="!" or n[i-2]=="?":
+                n[i]=n[i].upper()
+        if n[i-1]==" " and n[i]=="i" and n[i+1]==" ":
+            n[i]=n[i].upper()
+    c=""
+    for j in range(0,len(n)):
+        c=c+n[j]
+    print(c)
+cap(s)          
