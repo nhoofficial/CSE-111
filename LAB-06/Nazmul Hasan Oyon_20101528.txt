@@ -1,0 +1,119 @@
+#1
+class DataType:
+    def __init__(self,name,value):
+        self.name = name
+        self.value = value
+data_type1 = DataType('Integer', 1234)
+print(data_type1.name)
+print(data_type1.value)
+print('=====================')
+data_type2 = DataType('String', 'Hello')
+print(data_type2.name)
+print(data_type2.value)
+print('=====================')
+data_type3 = DataType('Float', 4.0)
+print(data_type3.name)
+print(data_type3.value)        
+
+#2
+class Flower:
+    def __init__(self):
+        pass
+flower1= Flower()        
+flower1.name="Rose"
+flower1.color="Red"
+flower1.num_of_petal=6
+print("Name of this flower:", flower1.name)
+print("Color of this flower:",flower1.color)
+print("Number of petal:",flower1.num_of_petal)
+print('======================')
+flower2 = Flower()
+flower2.name="Orchid"
+flower2.color="Purple"
+flower2.num_of_petal=4
+print("Name of this flower:",flower2.name)
+print("Color of this flower:",flower2.color)
+print("Number of petal:",flower2.num_of_petal) 
+print(flower1)
+print(flower2)
+if flower1==flower2:
+    print("They are same.")
+else:
+    print("They are different")
+
+#3
+class Wadiya():
+    
+    def __init__(self):
+        self.name = 'Aladeen'
+        self.designation = 'President Prime Minister Admiral General'
+        self.num_of_wife = 100
+        self.dictator = True
+wadiya=Wadiya()
+a=wadiya.name
+print("Name of the president:",wadiya.name)
+print("Designation:",wadiya.designation)
+print("The number of wife:",wadiya.num_of_wife)
+print("Is he/she a doctor:",wadiya.dictator)=
+wadiya.name="Donald Trump"
+wadiya.designation="President"
+wadiya.num_of_wife=1
+wadiya.dictator=False
+print("Name of the president:",wadiya.name)
+print("Designation:",wadiya.designation)
+print("The number of wife:",wadiya.num_of_wife)
+print("Is he/she a doctor:",wadiya.dictator)
+if wadiya.name!=a:
+    print("Previous information lost.")
+else:
+    print("No, changing had no effect on previous value.")
+
+#4
+class Joker:
+    
+    def __init__(self,name,power,is_he_psycho):
+        self.name = name
+        self.power = power
+        self.is_he_psycho = is_he_psycho
+j1 = Joker('Heath Ledger', 'Mind Game', False)
+print(j1.name)
+print(j1.power)
+print(j1.is_he_psycho)
+print("================")
+j2 = Joker('Joaquin Phoenix', 'Laughing out Loud', True)
+print(j2.name)
+print(j2.power)
+print(j2.is_he_psycho)
+print("================")
+if j1 == j2:
+    print('same')    
+else:
+    print('different') #here object j1 and j2 memory location is in different place that's why it prints "different".
+j2.name = 'Heath Ledger' 
+if j1.name == j2.name:
+    print('same') #at the beginning j2.name was 'Joaquin Phoenix' but after that j2.name assingned to "Heath Ledger"==j1.name thats why it prints "same".
+else:
+    print('different')
+
+#5
+class Pokemon:
+    
+    def __init__(self,pokemon1_name,pokemon2_name,pokemon1_power,pokemon2_power,damage_rate):
+        self.pokemon1_name = pokemon1_name
+        self.pokemon2_name = pokemon2_name
+        self.pokemon1_power = pokemon1_power             
+        self.pokemon2_power = pokemon2_power
+        self.damage_rate = damage_rate
+        
+team_pika = Pokemon('pikachu', 'charmander', 90, 60, 10)
+print('=======Team 1=======')
+print('Pokemon 1:',team_pika.pokemon1_name,team_pika.pokemon1_power)
+print('Pokemon 2:',team_pika.pokemon2_name,team_pika.pokemon2_power)
+pika_combined_power = (team_pika.pokemon1_power + team_pika.pokemon2_power) * team_pika.damage_rate
+print('Combined Power:', pika_combined_power) 
+team_bulb = Pokemon('bulbasaur','squirtle', 80,70,9)
+print('=======Team 2=======')
+print("Pokemon1:",team_bulb.pokemon1_name,team_bulb.pokemon1_power)
+print("Pokemon2:",team_bulb.pokemon2_name,team_bulb.pokemon2_power)
+pika_combined_power = (team_bulb.pokemon1_power + team_bulb.pokemon2_power) * team_bulb.damage_rate
+print('Combined Power:', pika_combined_power)
