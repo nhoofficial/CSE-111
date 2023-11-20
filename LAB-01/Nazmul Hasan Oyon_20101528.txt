@@ -1,0 +1,140 @@
+#easy 1
+i=1
+while i<=30:
+    if i%3==0 or i%5==0:
+        print(i)
+    i+=1  
+
+#easy2
+a=int(input("Enter a: "))
+b=int(input("Enter b: "))
+c=int(input("Enter c: "))
+if a>b:
+    if a>c:
+        print(a)
+    else:
+        print(c)
+else:
+    if b>c:
+        print(b)
+    else:
+        print(c)
+
+#easy3
+mark=input("Enter mark: ")
+mark=int(mark)
+if mark>=90:
+    print("A")
+elif mark>=85:
+    print("A-")
+elif mark>=80:
+    print("B+")
+elif mark>=75:
+    print("B")
+elif mark>=70:
+    print("B-")
+elif mark>=65:
+    print("C+")
+elif mark>=60:
+    print("C")
+elif mark>=57:
+    print("C-") 
+elif mark>=55:
+    print("D+")
+elif mark>=52:
+    print("D")
+elif mark>=50:
+    print("D-") 
+else:
+    print("F")    
+    
+#easy4
+num=int(input("Enter number: "))
+i=1
+divc=0
+while i<=num:
+    if num%i==0:
+        divc+=1
+    i+=1
+if divc==2:
+    print("Prime number")
+else:
+    print("Not prime number")
+
+#medium1
+num=int(input("Enter number: "))
+first=0
+second=1
+sum=first+second
+print(first,end=" ")
+print(second,end=" ")
+print(sum,end=" ")
+while sum<num:
+    print(sum,end=" ")
+    first=second
+    second=sum
+    sum=first+second
+
+#medium2
+num=int(input("Enter number: "))
+for i in range(num,0,-1):
+    print(i,end="")
+
+#medium3
+num=int(input("Enter number: "))
+i=1
+sum=0
+while i<num:
+    if num%i==0:
+        sum+=i
+    i+=1
+if sum==num:
+    print("Perfect Number")
+else:
+    print("Not perfect Number")
+
+#hard1
+x=input("Enter number: ")
+y=[]
+for i in x:
+    if i not in y:
+        y.append(i)
+z=0
+for i in y:
+    z+=1
+print(z)
+
+#hard2
+row=int(input("Enter row"))
+for i in range(row+1):
+    for space in range(0,row-i,1):
+        print(' ',end="")
+    for j in range(1,2*i,1):
+        if i==0 or j==1 or i==row or j==(2*i)-1:
+            print("*",end='')
+        else:
+            print(" ",end='')
+    print()    
+for i in range(row-1,-1,-1):
+    for space in range(0,row-i,1):
+        print(' ',end="")
+    for j in range(1,2*i,1):
+        if i==0 or j==1 or i==row or j==(2*i)-1:
+            print("*",end='')
+        else:
+            print(" ",end='')
+    print()    
+
+#hard3
+num=int(input("Enter number: "))
+c=0
+while num>0:
+    if num%2!=0:
+        c+=1
+    num=num/2
+    num=int(num)
+sum=0
+for i in range(c):
+    sum=sum+2**i
+print(sum)       
+    
