@@ -1,0 +1,152 @@
+#easy1
+s=input("Enter word: ")
+s=s.lower()
+c=0
+a=""
+for i in range(0,len(s)):
+    if s[i]=="a" or s[i]=="e" or s[i]=="i" or s[i]=="o" or s[i]=="u":
+        c+=1
+    else:
+        a=a+s[i]
+   
+print(a,end="")
+print(c)
+
+#easy2
+s=input("Enter word: ")
+s=s.replace(" ","")
+s=s.lower()
+c=""
+for i in range(len(s)-1,-1,-1):
+    c=c+s[i]
+if s==c:
+    print("True")
+else:
+    print("False")
+
+#easy3
+s=input("Enter word: ")
+if len(s)<4:
+    print(s)
+else:
+    if s[len(s)-1]=="l" and s[len(s)-2]=="u" and s[len(s)-3]=="f":
+        print(s+"ly")
+    else:
+        print(s+"ful")
+
+#medium1
+s=input("Enter word: ")
+a=0
+b=0
+for i in range(0,len(s)):
+    if s[i]==s[i].upper():
+        a+=1
+    else:
+        b+=1
+if a>b:
+   print(s.upper())
+else:
+    print(s.lower())
+    
+#medium2
+s=input("Enter word: ")
+try:
+    i=int(s)
+    print("NUMBER")
+except:
+    s=s.lower()
+    for i in s:
+        if i.isnumeric():
+            print("MIXED")
+            break
+    else:
+        print("WORD")
+
+#medium3
+n=input('Enter string: ')
+c=''
+for i in range(0,len(n)):
+    if n[i] == n[i].upper():
+        x = i
+        break
+    else: 
+        continue
+for i in range(x+1,len(n)):
+    if n[i]!=n[i].upper():
+        c+=n[i]
+    else:
+        break
+if c=='':
+    print('BLANK')
+else:
+    print(c)
+
+#medium4
+s=input("Enter sentence: ")
+r=" too good"
+if r in s:
+    s=s.replace(" too good"," excellent")
+    print(s)
+else:
+    print(s)
+
+#hard1
+s1=input("Enter string1: ")
+s2=input("Enter string2: ")
+s1=s1.lower()
+s2=s2.lower()
+c=""
+for i in range(0,len(s1)):
+    for j in range(0,len(s2)):
+        if s2[j]==s1[i]:
+            c+=s2[j]
+if c=="":
+    print("Nothing in common")
+else:
+    print(c)
+
+#hard2
+s=input("Enter Sring: ")
+new=""
+for i in range(len(s)):
+    if s[i]!=s[len(s)-1]:
+        new+=s[i]
+    else:
+        new+=s[i]
+        break
+if s.startswith(new)==s.endswith(new) and s.count(new)==3:
+    print("Palindrome Substring")
+else:
+    print("Not palindrome Substring")
+    
+
+#Hard3
+s=input("Enter word: ")
+sc=0
+uc=0
+n=0
+sp_chr=["@","_","#","$"]
+a=0
+for i in range(0,len(s)):
+    if s[i]==s[i].lower():
+        sc+=1
+    if s[i]==s[i].upper():
+        uc+=1
+    if s[i].isnumeric():
+        n+=1
+    if s[i] in sp_chr:
+        a+=1
+if sc!=0 and uc!=0 and n!=0 and a!=0:
+    print("OK")
+else:
+    if sc==0:
+        print("Lower case missing",end=" ")
+    if uc==0:
+        print("Upper case missing",end=" ")
+    if n==0:
+        print("Digit missing",end=" ")
+    if sc==0:
+        print("Special case missing",end=" ") 
+
+
+
