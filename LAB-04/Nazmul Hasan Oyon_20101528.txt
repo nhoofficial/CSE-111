@@ -1,0 +1,151 @@
+#easy1
+s=[]
+for i in range(10):
+    n=int(input("Enter number: "))
+    s.append(n)
+s.reverse()
+print(s)
+
+#easy2
+list1=[1,3,5,7,9,10]
+list2=[2,4,6,8]
+list1[-1:]=list2
+print(list1)
+
+#easy3
+list=[]
+for i in range(10):
+    n=int(input("Enter number: "))
+    if n in list:
+        print("Enter different number")
+        i-=1
+    else:
+        list.append(n)
+
+#medium1
+n=[]
+while True:
+    x=input("Enter number: ")
+    if x =="STOP":
+        break
+    
+    else:
+        n.append(int(x))
+c=0        
+for i in n:
+    if n.index(i)==c:
+        print(i,"-",n.count(i),"times")
+        c+=1
+       
+#med2
+n=int(input("Enter number: "))
+num=[]
+lst=[]
+x=[]
+for i in range(n):
+    num1,num2,num3=(input().split())
+    num1=int(num1)
+    num2=int(num2)
+    num3=int(num3)
+    sum=num1+num2+num3
+    num.append(num1)
+    num.append(num2)
+    num.append(num3)
+    lst.append(sum)
+print(max(lst))
+for i in range(0,len(num),3):
+    sum1=num[i]+num[i+1]+num[i+2]
+    if sum1==max(lst):
+        x.append(num[i])
+        x.append(num[i+1])
+        x.append(num[i+2])
+print(x) 
+
+#medium3
+list1=[2,3,6]
+list2=[3,4,5]
+s=[]
+for i in range(0,len(list1)):
+    for j in range(0,len(list2)):
+        n=list1[i]*list2[j]
+        s.append(n)
+print(s)        
+       
+#medium4
+n=int(input("Enter number: "))
+s=input("Enter String: ")
+s=s.split(",")
+list=[]
+for i in range(0,len(s),3):
+    list.append(s[i])
+print(list)    
+
+#hard1
+while True:
+    abc = input("Enter number: ")
+    if abc == "STOP":
+        break
+    else:
+        a = True
+        new = abc.split()
+        n = len(new)
+        b = []
+        for i in range(n):
+            t = int(new[i])
+            b.append(t)
+        lst = []
+        for i in range(n-1):
+            abc = abs(b[i+1]- b[i])
+            lst.append(abc)
+        lst.sort()
+        for i in range(n-1):
+            if lst[i] != i+1:
+                a = False
+        if a == False:
+            print("Not UB Jumper")
+        else:
+            print("UB Jumper")
+#hard2
+s=input("Enter string: ")
+a=""
+b=""
+c=""
+odd=""
+even=""
+for i in range(len(s)):
+    if s[i].isupper():
+        a+=s[i]
+    if s[i].islower():
+        b+=s[i]
+    if s[i].isnumeric():
+        c+=s[i]
+a=list(a)        
+a.sort()
+x=''.join(a)
+
+b=list(b)
+b.sort()
+y=''.join(b)
+
+for i in c:
+    a=int(i)
+    if a%2==0:
+        even+=i
+    else:
+        odd+=i
+print(y,end="")
+print(x,end="")
+print(odd,end="")
+print(even,end="")     
+
+#hard3
+n=int(input("Enter number: "))
+k=int(input("Enter number: "))
+player=list=(int(x) for x in input().split(" "))
+c=0
+for i in player:
+    if (5-i)>=k:
+        c+=1
+c=c/3
+print(int(c))   
+    
